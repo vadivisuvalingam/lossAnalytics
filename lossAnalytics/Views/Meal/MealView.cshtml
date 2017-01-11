@@ -1,0 +1,27 @@
+﻿@model lossAnalytics.Models.Meal
+@{
+    ViewBag.Title = "MealView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.MealName</h2>
+<p>@Model.MealTime.ToLongDateString()</p>
+<p>@Model.MealCalories calories</p>
+
+<h2>Select from food types</h2>
+<ul>
+    @foreach (string foodtype in Model.FoodTypes)
+    {
+        <li>
+            @foodtype
+        </li>
+    }
+</ul>
+@Html.Raw(Model.dynamicHtml)
+<form method="post">
+    <input type="text" name="Meal" />
+    <input type="text" name="Meal2" />
+    <input type="submit" id="Submit" />
+</form>
+
+
