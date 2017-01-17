@@ -235,13 +235,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\DBService.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Today%27s Breakfast.aspx.cs">
-      <DependentUpon>Today%27s Breakfast.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Today%27s Breakfast.aspx.designer.cs">
-      <DependentUpon>Today%27s Breakfast.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-lumen.css" />
@@ -270,7 +263,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Today%27s Breakfast.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

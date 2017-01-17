@@ -26,21 +26,5 @@ namespace lossAnalytics.Controllers
 
             return View();
         }
-
-        [HttpGet]
-        public ActionResult Foo()
-        {
-            ViewBag.FormHeading = "Please enter your name";
-            return View("About");
-        }
-
-        public ActionResult Foo(string testText)
-        {
-            ViewBag.FormHeading = "Hello " + testText;
-            return View("About");
-        }
-
-
-
     }
 }
