@@ -27,16 +27,20 @@ namespace lossAnalytics.Controllers
         [HttpPost]
         public ActionResult MealView(string Meal, string Meal2)
         {
+            var meal2 = new Models.Meal();
             var foodTypes = new List<string> { "Dessert", "Lunch", "Breakfast", "Dinner", "Snack", "Midnight Snack" };
-            var meal = new Models.Meal()
-            {
-                MealName = "Breakfast",
-                MealTime = new DateTime(2016, 12, 14, 9, 10, 22),
-                MealCalories = 300,
-                FoodTypes = foodTypes,
-                dynamicHtml = Meal + " add " + Meal2,
-            };
-            return View(meal);
+            foreach (var foodtype in foodTypes) { 
+                var meal = new Models.Meal()
+                {
+                    MealName = Request.Form[foodtype],
+                    MealTime = new DateTime(2016, 12, 14, 9, 10, 22),
+                    MealCalories = 300,
+                    FoodTypes = foodTypes,
+                    dynamicHtml = Meal + " add " + Meal2,
+                };
+                meal2 = meal;
+            }
+            return View(meal2);
         }
     }
 }

@@ -9,18 +9,19 @@
 <p>@Model.MealCalories calories</p>
 
 <h2>Select from food types</h2>
-<ul>
-    @foreach (string foodtype in Model.FoodTypes)
-    {
-        <li>
-            @foodtype
-        </li>
-    }
-</ul>
+
 @Html.Raw(Model.dynamicHtml)
 <form method="post">
     <input type="text" name="Meal" />
     <input type="text" name="Meal2" />
+    <ul>
+        @foreach (string foodtype in Model.FoodTypes)
+        {
+            <li>
+                @Html.Partial("_MealViewPartial", new lossAnalytics.Models.MealPartial() { ID = foodtype })
+            </li>
+        }
+    </ul>
     <input type="submit" id="Submit" />
 </form>
 
