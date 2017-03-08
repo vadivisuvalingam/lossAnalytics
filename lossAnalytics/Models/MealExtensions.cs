@@ -5,7 +5,7 @@ using System.Web;
 
 namespace lossAnalytics.Models
 {
-    public class MealPartial : Base.Entity
+    public class MealExtensions
     {
     }
 }

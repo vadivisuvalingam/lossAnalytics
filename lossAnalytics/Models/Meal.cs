@@ -5,7 +5,7 @@ using System.Web;
 
 namespace lossAnalytics.Models
 {
-    public class Meal
+    public class Meal : Base.Entity
     {
         public string MealName { get; set; }
         public DateTime MealTime { get; set; }
