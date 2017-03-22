@@ -7,9 +7,19 @@ namespace lossAnalytics.Base
 {
     public class Column
     {
+        private string _columnName;
+
         public Column()
         {
 
+        }
+
+        public string ColumnName
+        {
+            get
+            {
+                return _columnName;
+            }
         }
     }
 }
