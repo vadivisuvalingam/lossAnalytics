@@ -20,6 +20,10 @@ namespace lossAnalytics.Base
             {
                 return _columnName;
             }
+            set
+            {
+                _columnName = value;
+            }
         }
     }
 }

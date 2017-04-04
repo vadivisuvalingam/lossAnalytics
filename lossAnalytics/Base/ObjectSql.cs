@@ -7,20 +7,30 @@ namespace lossAnalytics.Base
 {
     public class ObjectSql
     {
+        private string _table;
+        private Column _idColumn;
+
         public ObjectSql()
         {
 
         }
 
-        public string Table()
+        public string Table
         {
-            return String.Empty;
+            get { return _table; }
+            set { _table = value; }
         }
 
         public List<Column> Columns()
         {
             var retValue = new List<Column>();
             return retValue;
+        }
+
+        public Column Id
+        {
+            get { return _idColumn; }
+            set { _idColumn = value; }
         }
     }
 }
