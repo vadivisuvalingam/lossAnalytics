@@ -221,6 +221,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Base\Column.cs" />
     <Compile Include="Base\Entity.cs" />
+    <Compile Include="Base\IColumn.cs" />
+    <Compile Include="Base\IObjectSql.cs" />
     <Compile Include="Base\IRepository.cs" />
     <Compile Include="Base\ObjectSql.cs" />
     <Compile Include="Base\UnitOfWork.cs" />

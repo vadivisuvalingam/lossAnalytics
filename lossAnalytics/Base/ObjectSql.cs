@@ -5,10 +5,11 @@ using System.Web;
 
 namespace lossAnalytics.Base
 {
-    public class ObjectSql
+    public class ObjectSql : IObjectSql
     {
         private string _table;
-        private Column _idColumn;
+        private IColumn _idColumn;
+        private IEnumerable<IColumn> _columns;
 
         public ObjectSql()
         {
@@ -21,13 +22,13 @@ namespace lossAnalytics.Base
             set { _table = value; }
         }
 
-        public List<Column> Columns()
+        public IEnumerable<IColumn> Columns
         {
-            var retValue = new List<Column>();
-            return retValue;
+            get { return _columns; }
+            set { _columns = value; }
         }
 
-        public Column Id
+        public IColumn Id
         {
             get { return _idColumn; }
             set { _idColumn = value; }

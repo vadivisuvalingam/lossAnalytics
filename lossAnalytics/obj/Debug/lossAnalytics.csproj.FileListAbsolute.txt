@@ -77,7 +77,6 @@ C:\Users\Vadivananthan\Documents\Visual Studio 2015\Projects\lossAnalytics\lossA
 C:\Users\Vadivananthan\Documents\Visual Studio 2015\Projects\lossAnalytics\lossAnalytics\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Vadivananthan\Documents\Visual Studio 2015\Projects\lossAnalytics\lossAnalytics\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Vadivananthan\Documents\Visual Studio 2015\Projects\lossAnalytics\lossAnalytics\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Vadivananthan\Documents\Visual Studio 2015\Projects\lossAnalytics\lossAnalytics\obj\Debug\lossAnalytics.csprojResolveAssemblyReference.cache
 C:\Users\Vadivananthan\Documents\Visual Studio 2015\Projects\lossAnalytics\lossAnalytics\obj\Debug\lossAnalytics.dll
 C:\Users\Vadivananthan\Documents\Visual Studio 2015\Projects\lossAnalytics\lossAnalytics\obj\Debug\lossAnalytics.pdb
 C:\Users\Vadivananthan\documents\visual studio 2015\Projects\lossAnalytics\lossAnalytics\bin\System.Net.Http.Formatting.dll

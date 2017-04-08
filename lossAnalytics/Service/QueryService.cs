@@ -9,9 +9,9 @@ namespace lossAnalytics.Service
 {
     public class QueryService
     {
-        private ObjectSql _objectSql;
+        private IObjectSql _objectSql;
 
-        public QueryService(ObjectSql objectSql)
+        public QueryService(IObjectSql objectSql)
         {
             _objectSql = objectSql;
         }
@@ -21,10 +21,10 @@ namespace lossAnalytics.Service
             var retVal = new StringBuilder();
             retVal.Append("SELECT");
             retVal.Append(" ");
-            foreach(var column in _objectSql.Columns().Select((value, i) => new { i, value }))
+            foreach(var column in _objectSql.Columns.Select((value, i) => new { i, value }))
             {
                 retVal.Append($"'{column.value.ColumnName}' ");
-                if(column.i < (_objectSql.Columns().Count() - 1)) { 
+                if(column.i < (_objectSql.Columns.Count() - 1)) { 
                     retVal.Append(", ");
                 }
             }
@@ -39,10 +39,10 @@ namespace lossAnalytics.Service
             var retVal = new StringBuilder();
             retVal.Append($"INSERT INTO '{_objectSql.Table}'");
             retVal.Append("( ");
-            foreach (var column in _objectSql.Columns().Select((value, i) => new { i, value }))
+            foreach (var column in _objectSql.Columns.Select((value, i) => new { i, value }))
             {
                 retVal.Append($"'{column.value.ColumnName}' ");
-                if (column.i < (_objectSql.Columns().Count() - 1))
+                if (column.i < (_objectSql.Columns.Count() - 1))
                 {
                     retVal.Append(", ");
                 }

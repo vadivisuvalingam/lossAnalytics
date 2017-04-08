@@ -5,7 +5,7 @@ using System.Web;
 
 namespace lossAnalytics.Base
 {
-    public class Column
+    public class Column : IColumn
     {
         private string _columnName;
 
