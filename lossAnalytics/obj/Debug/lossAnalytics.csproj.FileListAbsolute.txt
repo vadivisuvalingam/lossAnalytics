@@ -89,3 +89,4 @@ C:\Users\Vadivananthan\documents\visual studio 2015\Projects\lossAnalytics\lossA
 C:\Users\Vadivananthan\documents\visual studio 2015\Projects\lossAnalytics\lossAnalytics\bin\System.Data.SQLite.EF6.dll
 C:\Users\Vadivananthan\documents\visual studio 2015\Projects\lossAnalytics\lossAnalytics\bin\System.Data.SQLite.Linq.dll
 C:\Users\Vadivananthan\documents\visual studio 2015\Projects\lossAnalytics\lossAnalytics\bin\System.Data.SQLite.xml
+C:\Users\Vadivananthan\documents\visual studio 2015\Projects\lossAnalytics\lossAnalytics\obj\Debug\lossAnalytics.csprojResolveAssemblyReference.cache

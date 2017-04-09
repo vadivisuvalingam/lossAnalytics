@@ -21,34 +21,24 @@ namespace lossAnalytics.Service
             var retVal = new StringBuilder();
             retVal.Append("SELECT");
             retVal.Append(" ");
-            foreach(var column in _objectSql.Columns.Select((value, i) => new { i, value }))
-            {
-                retVal.Append($"'{column.value.ColumnName}' ");
-                if(column.i < (_objectSql.Columns.Count() - 1)) { 
-                    retVal.Append(", ");
-                }
-            }
+            retVal.Append(string.Join(",", _objectSql.Columns.Select(x => $"'{x.ColumnName}'").ToArray()));
+            retVal.Append(" ");
             retVal.Append($"FROM '{ _objectSql.Table }'");
 
             return retVal.ToString();
             
         }
 
-        public string GetInsertStatement(List<string> values)
+        public string GetInsertStatement(IEnumerable<string> values)
         {
             var retVal = new StringBuilder();
             retVal.Append($"INSERT INTO '{_objectSql.Table}'");
             retVal.Append("( ");
-            foreach (var column in _objectSql.Columns.Select((value, i) => new { i, value }))
-            {
-                retVal.Append($"'{column.value.ColumnName}' ");
-                if (column.i < (_objectSql.Columns.Count() - 1))
-                {
-                    retVal.Append(", ");
-                }
-            }
+            retVal.Append(string.Join(",", _objectSql.Columns.Select( x => $"'{x.ColumnName}'").ToArray()));
+            retVal.Append(") ");
+            retVal.Append("VALUES (");
+            retVal.Append(string.Join(",", values.Select(x => $"'{x}'").ToArray()));
             retVal.Append(")");
-
             return retVal.ToString();
         }
 
@@ -57,13 +47,17 @@ namespace lossAnalytics.Service
             var retVal = new StringBuilder();
             retVal.Append($"DELETE * FROM '{_objectSql.Table}'");
             retVal.Append($"WHERE '{_objectSql.Id.ColumnName}' = '{id}'");
-
             return retVal.ToString();
         }
 
-        public string GetUpdateStatement(Dictionary<Column, String> columnValuePairs, string id)
+        public string GetUpdateStatement(IDictionary<IColumn, String> columnValuePairs, string id)
         {
-            return string.Empty;
+            var retVal = new StringBuilder();
+            retVal.Append($"UPDATE '{_objectSql.Table}' SET ");
+            retVal.Append(string.Join(",", columnValuePairs.Select(x => $"'{x.Key.ColumnName}' = '{x.Value}'").ToArray()));
+            retVal.Append(" WHERE ");
+            retVal.Append($"'{_objectSql.Id.ColumnName}' = '{id}' ");
+            return retVal.ToString();
         }
     }
 }
